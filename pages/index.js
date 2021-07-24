@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Head from 'next/head';
+import Post from '../components/Post';
 
 export default function Home({ posts }) {
   console.log('posts=', posts);
@@ -14,7 +15,7 @@ export default function Home({ posts }) {
       </Head>
       <div className='posts'>
         {posts.map((post, index) => (
-          <h3>{post.frontmatter.title}</h3>
+          <Post post={post} key={index}></Post>
         ))}
       </div>
     </div>
