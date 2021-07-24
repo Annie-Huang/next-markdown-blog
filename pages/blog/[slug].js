@@ -1,9 +1,14 @@
 import React from 'react';
 import fs from 'fs';
 import path from 'path';
+import matter from 'gray-matter';
 
-const PostPage = () => {
-  return <div>post</div>;
+const PostPage = ({
+  frontmatter: { title, date, cover_image },
+  slug,
+  content,
+}) => {
+  return <div>{title}</div>;
 };
 
 export async function getStaticPaths() {
@@ -43,8 +48,14 @@ export async function getStaticProps({ params: { slug } }) {
     'utf-8'
   );
 
+  const { data: frontmatter, content } = matter(markdownWithMeta);
+
   return {
-    props: {},
+    props: {
+      frontmatter,
+      slug,
+      content,
+    },
   };
 }
 
