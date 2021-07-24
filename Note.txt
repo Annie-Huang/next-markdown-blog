@@ -7,3 +7,7 @@ https://github.com/Annie-Huang/next-markdown-blog
 C:\react>npx create-next-app next-markdown-blog
 C:\react\next-markdown-blog>npm install gray-matter
 C:\react\next-markdown-blog>npm install marked
+C:\react\next-markdown-blog>npm run build
+
+C:\react\next-markdown-blog>npm install eslint --save-dev
+C:\react\next-markdown-blog>npm install eslint-config-next --save-dev
