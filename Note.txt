@@ -1,0 +1,7 @@
+Static Blog With Next.js and Markdown (https://www.youtube.com/watch?v=MrjeefD8sac)
+
+https://github.com/bradtraversy/next-markdown-blog
+https://github.com/Annie-Huang/next-markdown-blog
+
+===============================================================
+C:\react>npx create-next-app next-markdown-blog
