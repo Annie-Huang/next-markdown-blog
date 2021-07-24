@@ -5,3 +5,4 @@ https://github.com/Annie-Huang/next-markdown-blog
 
 ===============================================================
 C:\react>npx create-next-app next-markdown-blog
+C:\react\next-markdown-blog>npm install gray-matter
