@@ -2,6 +2,7 @@
 // which will sit on the server side, so will not cause problem with client side.
 import fs from 'fs';
 import path from 'path';
+import matter from 'gray-matter';
 import Head from 'next/head';
 
 export default function Home({ posts }) {
@@ -34,18 +35,36 @@ export async function getStaticProps() {
       'utf-8'
     );
 
-    console.log('markdownWithMeta=', markdownWithMeta); // print out the content of the test.md
+    // console.log('markdownWithMeta=', markdownWithMeta); // print out the content of the test.md
+
+    const { data: frontmatter } = matter(markdownWithMeta);
 
     return {
       slug,
+      frontmatter,
     };
   });
 
-  console.log(posts); // print: [ { slug: 'test' } ]
+  console.log(posts);
+  // print: [ { slug: 'test' } ]
+  /*
+    [
+      {
+        slug: 'test',
+        frontmatter: {
+          title: 'Test Post',
+          date: 'June 24 2021',
+          excerpt: 'This is the excerpt',
+          cover_image: '/images/posts/img1,jpg'
+        }
+      }
+    ]
+  */
 
   return {
     props: {
-      posts: 'The Posts',
+      // posts: 'The Posts',
+      posts: posts,
     },
   };
 }
